@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>પ્રીમિયમ કંકોતરી અને જમણવાર મેનેજમેન્ટ સોફ્ટવેર v12</title>
+    <title>S.K.B.S - કંકુતરી મેનેજમેન્ટ સોફ્ટવેર</title>
     <!-- Bootstrap 5 & FontAwesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -27,41 +27,83 @@
             color: #2F2621;
         }
 
-        /* Navbar Styling */
+        /* PREMIUM GOLD NAV BAR WITH CUSTOM SKBS BRANDING */
         .navbar-premium {
-            background: linear-gradient(135deg, var(--royal-maroon-dark) 0%, var(--royal-maroon) 50%, var(--royal-maroon-dark) 100%);
-            border-bottom: 4px solid var(--royal-gold);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.25);
-            padding: 12px 0;
+            background: linear-gradient(-45deg, #fbf4ec, #f3e1cb, #e6c594, #dfb77b);
+            background-size: 400% 400%;
+            animation: premiumGradient 12s ease infinite;
+            border-bottom: 4px solid var(--royal-maroon);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+            padding: 5px 0;
         }
-        .navbar-brand {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #FFFFFF !important;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        @keyframes premiumGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        .navbar-brand span {
-            color: var(--royal-gold);
+        
+        .brand-container {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
         }
-        .nav-link { 
-            color: #FFFDF9 !important; 
+        /* અક્ષરો હજી થોડા નાના કર્યા */
+        .navbar-brand-main {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--royal-maroon-dark) !important;
+            letter-spacing: 1px;
+            margin: 0;
+            padding: 0;
+        }
+        /* અક્ષરો હજી થોડા નાના કર્યા */
+        .navbar-brand-sub {
+            font-size: 0.7rem;
             font-weight: 600;
-            padding: 10px 18px !important;
-            margin: 2px 4px;
+            color: var(--royal-maroon);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link { 
+            color: #4e3629 !important; 
+            font-weight: 600;
+            padding: 10px 14px !important;
+            margin: 2px 2px;
             cursor: pointer;
             transition: all 0.3s ease;
             border-radius: 8px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
         .nav-link:hover { 
-            color: var(--royal-gold) !important; 
-            background: rgba(255, 255, 255, 0.08);
+            color: var(--royal-maroon) !important; 
+            background: rgba(99, 9, 21, 0.08);
         }
         .nav-link.active { 
-            background: linear-gradient(135deg, var(--royal-gold) 0%, #B8860B 100%) !important; 
-            color: var(--royal-maroon-dark) !important; 
+            background: linear-gradient(135deg, var(--royal-maroon) 0%, var(--royal-maroon-dark) 100%) !important; 
+            color: #FFFFFF !important; 
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 4px 15px rgba(99, 9, 21, 0.3);
+        }
+
+        /* Ganesha Framework Animation */
+        .ganesh-frame {
+            border: 2px dashed var(--royal-gold);
+            padding: 25px;
+            border-radius: 12px;
+            background: rgba(212, 175, 55, 0.04);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .ganesh-frame h1 {
+            animation: pulseGanesh 3s ease-in-out infinite;
+        }
+        @keyframes pulseGanesh {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); text-shadow: 0 0 10px rgba(214,175,55,0.3); }
+            100% { transform: scale(1); }
         }
 
         /* Cards Design */
@@ -73,16 +115,8 @@
             border-radius: 16px;
             padding: 30px;
         }
-
-        .ganesh-frame {
-            border: 2px dashed var(--royal-gold);
-            padding: 25px;
-            border-radius: 12px;
-            background: rgba(212, 175, 55, 0.04);
-            margin-bottom: 30px;
-        }
         
-        /* Fixed Stats Cards - Clear text visibility */
+        /* Stats Cards */
         .stat-card { 
             cursor: pointer; 
             transition: all 0.3s ease; 
@@ -98,6 +132,8 @@
         .stat-total { background-color: #EBF3FF; color: #0d6efd; }
         .stat-verified { background-color: #E8F5E9; color: #1b5e20; }
         .stat-pending { background-color: #FFEBEE; color: #b71c1c; }
+        .stat-wa-sent { background-color: #E8F8F5; color: #0e6251; }
+        .stat-wa-pending { background-color: #FEF9E7; color: #7d6608; }
 
         .stat-card h6 { color: #495057 !important; font-weight: 700; }
         .stat-card small { color: #6c757d !important; }
@@ -136,34 +172,51 @@
             font-weight: 600;
             border-radius: 10px;
         }
+        .btn-print-menu {
+            background: linear-gradient(135deg, #fef9e7 0%, #f5c469 100%);
+            color: #630915 !important;
+            border: 2px solid #630915;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        .btn-print-menu:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(99,9,21,0.2);
+        }
 
-        /* Fixed Tables - High Contrast Text */
+        /* Beautiful Tables Design Updates */
         .custom-guest-table-wrapper {
             border-radius: 14px;
             overflow: hidden;
-            border: 1px solid rgba(99, 9, 21, 0.2);
+            border: 2px solid rgba(99, 9, 21, 0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
         }
         .custom-guest-table { margin-bottom: 0; }
         .custom-guest-table thead {
             background: linear-gradient(to right, var(--royal-maroon-dark), var(--royal-maroon)) !important;
         }
         .custom-guest-table th {
-            color: #FFFFFF !important; /* Perfect white text on dark background */
+            color: #FFFFFF !important;
             font-weight: 600;
             padding: 16px 14px;
             border: none;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
         .custom-guest-table td {
-            padding: 14px 14px;
+            padding: 15px 14px;
             border-bottom: 1px solid #EFEAE4;
-            color: #212529 !important; /* Bold dark text on light background */
+            color: #212529 !important;
             background-color: #FFFFFF;
         }
         .custom-guest-table tbody tr:nth-child(even) td {
-            background-color: #FAF7F2 !important;
+            background-color: #FAF6F0 !important;
         }
         .custom-guest-table tbody tr:hover td {
-            background-color: #F1E6DA !important;
+            background-color: #F3EAE0 !important;
+            transition: background-color 0.2s ease;
         }
         
         .live-edit { 
@@ -196,25 +249,43 @@
             to { transform: translateX(0); opacity: 1; }
         }
 
-        /* Print Settings */
+        /* Hidden Direct Print Area Setup */
+        #hiddenPrintSection {
+            display: none;
+        }
+
+        /* Print Settings - Beautiful & Well Formatted */
         @media print {
             body * { visibility: hidden; }
-            #printArea, #printArea * { visibility: visible; }
-            #printArea { position: absolute; left: 0; top: 0; width: 100%; background: white !important; }
-            .no-print { display: none !important; }
-            .print-page { page-break-after: always; width: 210mm; height: 297mm; padding: 12mm 10mm; box-sizing: border-box; }
+            #hiddenPrintSection, #hiddenPrintSection * { visibility: visible; }
+            #hiddenPrintSection { position: absolute; left: 0; top: 0; width: 100%; display: block !important; background: white !important; }
+            
+            /* For cases where user is explicitly on the sticker page */
+            body.sticker-printing-mode #page-print, body.sticker-printing-mode #page-print * { visibility: visible; }
+            body.sticker-printing-mode #printArea, body.sticker-printing-mode #printArea * { visibility: visible; }
+            body.sticker-printing-mode #page-print { position: absolute; left: 0; top: 0; width: 100%; display: block !important; }
+            body.sticker-printing-mode .no-print { display: none !important; }
+
+            .print-page { page-break-after: always; width: 210mm; padding: 15mm 15mm; box-sizing: border-box; }
+            .print-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+            .print-table th, .print-table td { border: 1px solid #444 !important; padding: 10px 12px; color: #000 !important; font-size: 11pt; }
+            .print-table th { background-color: #f2f2f2 !important; font-weight: bold; text-align: left; }
+            .print-table tr:nth-child(even) { background-color: #fafafa !important; }
+            .print-category-header { background-color: #e2d1bc !important; font-weight: bold; color: #630915 !important; font-size: 13pt; }
+            .print-total-footer { background-color: #f5f5f5 !important; font-weight: bold; font-size: 12pt; border-top: 2px solid #630915 !important; }
+            
             .grid-10 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; row-gap: 6mm; }
             .grid-12 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; row-gap: 4mm; }
             .print-sticker-box { border: 2.5px solid #630915 !important; padding: 14px; border-radius: 8px; color: #630915 !important; background: #FFFDF9 !important; position: relative; }
             .height-10 { height: 52mm; } .height-12 { height: 43mm; }
             .print-sticker-box div { color: #630915 !important; }
-            .print-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-            .print-table th, .print-table td { border: 1.5px solid #630915 !important; padding: 12px; color: #630915 !important; }
-            .print-table th { background-color: #FDFBF7 !important; font-weight: bold; }
         }
     </style>
 </head>
 <body>
+
+<!-- Hidden Print Area for Background Actions without breaking screens -->
+<div id="hiddenPrintSection"></div>
 
 <!-- Dynamic Notification Toast -->
 <div id="toastNotification" class="custom-toast">
@@ -222,11 +293,15 @@
     <span id="toastMessage">સફળતાપૂર્વક અપડેટ થયું!</span>
 </div>
 
-<!-- Header / Navbar -->
+<!-- Header / Navbar with S.K.B.S Branding -->
 <nav class="navbar navbar-expand-lg navbar-premium navbar-dark sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#" onclick="showPage('home')">
-            <i class="fa-solid fa-gopuram me-2 text-warning"></i> કંકોતરી <span>મેનેજમેન્ટ સોફ્ટવેર</span>
+        <a class="navbar-brand d-flex align-items-center" href="#" onclick="showPage('home')">
+            <i class="fa-solid fa-gopuram me-2 text-danger fs-3"></i> 
+            <div class="brand-container">
+                <span class="navbar-brand-main">S.K.B.S</span>
+                <span class="navbar-brand-sub">Kankotri Management Software</span>
+            </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -238,7 +313,6 @@
                 <li class="nav-item"><a class="nav-link" id="nav-jamanvar" onclick="showPage('jamanvar')"><i class="fa-solid fa-utensils"></i> જમણવાર લિસ્ટ</a></li>
                 <li class="nav-item"><a class="nav-link" id="nav-whatsapp" onclick="showPage('whatsapp')"><i class="fa-brands fa-whatsapp"></i> વોટ્સએપ મેસેજ</a></li>
                 <li class="nav-item"><a class="nav-link" id="nav-print" onclick="showPage('print')"><i class="fa-solid fa-print"></i> સ્ટીકર પ્રિન્ટ</a></li>
-                <li class="nav-item"><a class="nav-link text-warning fw-bold" id="nav-fulllistprint" onclick="printFullList()"><i class="fa-solid fa-file-lines"></i> આખું લિસ્ટ પ્રિન્ટ</a></li>
             </ul>
         </div>
     </div>
@@ -254,7 +328,8 @@
                 <p class="text-muted fw-bold mb-0">શુભ લગ્ન મહોત્સવ કંકોતરી આમંત્રણ અને લિસ્ટ મેનેજર</p>
             </div>
             
-            <div class="row g-4 my-2">
+            <!-- First Row Counter -->
+            <div class="row g-4 my-1">
                 <div class="col-md-4">
                     <div class="card stat-card stat-total p-4 shadow-sm" onclick="openHomeListModal('total')">
                         <h6 class="text-uppercase mb-2"><i class="fa-solid fa-users text-primary"></i> કુલ મહેમાન</h6>
@@ -277,7 +352,26 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-5">
+
+            <!-- Second Row Counter for WhatsApp -->
+            <div class="row g-4 my-2">
+                <div class="col-md-6">
+                    <div class="card stat-card stat-wa-sent p-4 shadow-sm" onclick="openHomeListModal('wa_sent')">
+                        <h6 class="text-uppercase mb-2"><i class="fa-brands fa-whatsapp text-success"></i> વોટ્સએપ મેસેજ મોકલેલ (Sent)</h6>
+                        <div class="display-5 fw-bold my-2" id="home-wasent-count">0</div>
+                        <small class="fw-bold text-success">યાદી જોવા અને મેસેજ કરવા ક્લિક કરો ➔</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card stat-card stat-wa-pending p-4 shadow-sm" onclick="openHomeListModal('wa_pending')">
+                        <h6 class="text-uppercase mb-2"><i class="fa-brands fa-whatsapp text-warning"></i> વોટ્સએપ મોકલવાના બાકી (Pending)</h6>
+                        <div class="display-5 fw-bold my-2" id="home-wapending-count">0</div>
+                        <small class="fw-bold text-warning">બાકી યાદી જોવા અને ડાયરેક્ટ મોકલવા ક્લિક કરો ➔</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
                 <button class="btn btn-maroon btn-lg px-5 py-3 fs-5 shadow" onclick="showPage('entry')"><i class="fa-solid fa-circle-plus"></i> નવી કંકોતરી એન્ટ્રી ઉમેરો</button>
             </div>
         </div>
@@ -321,10 +415,11 @@
             <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
                 <h4 class="fw-bold mb-0" style="color: var(--royal-maroon);"><i class="fa-solid fa-address-book"></i> મહેમાન યાદી વ્યવસ્થાપન મેનુ</h4>
                 <div class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-print-menu px-3" onclick="printFullListDirect()"><i class="fa-solid fa-print"></i> આખું લિસ્ટ પ્રિન્ટ કરો</button>
                     <button class="btn btn-gold px-3" onclick="openDuplicateModal()"><i class="fa-solid fa-clone"></i> ડુપ્લીકેટ ચેક</button>
                     <button class="btn btn-danger fw-bold px-3 shadow-sm" onclick="deleteSelected()"><i class="fa-solid fa-trash"></i> ડીલીટ પસંદ કરેલ</button>
                     <button class="btn btn-success fw-bold px-3 shadow-sm" onclick="downloadExcel()"><i class="fa-solid fa-file-excel"></i> એક્સેલ એક્સપોર્ટ</button>
-                    <button class="btn btn-primary fw-bold px-3 shadow-sm" onclick="openUploadModal()"><i class="fa-solid fa-file-import"></i> એક્સેલ અપલોડ</button>
+                    <button class="btn btn-primary fw-bold px-3 shadow-sm" onclick="openUploadModal()"><i class="fa-solid fa-file-import"></i> એક્સેલ આપલોડ</button>
                 </div>
             </div>
 
@@ -332,11 +427,12 @@
                 <div class="col-md-5">
                     <div class="input-group shadow-sm">
                         <span class="input-group-text btn-maroon text-white"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" id="tableFilter" class="form-control" placeholder="નામ, કંપની કે શહેર લખી સર્ચ કરો..." onkeyup="filterTable()">
+                        <input type="text" id="tableFilter" class="form-control" placeholder="નામ, કંપની કે शहर લખી સર્ચ કરો..." onkeyup="filterTable()">
                     </div>
                 </div>
                 <div class="col-md-7 text-md-end mt-2 mt-md-0">
                     <span class="badge bg-dark p-2.5 fs-6 shadow-sm" id="filterCountBadge">કુલ મહેમાન: 0</span>
+                    <span class="badge bg-danger p-2.5 fs-6 shadow-sm id-selected-count" id="selectedCountBadge">પસંદ કરેલ મહેમાન: 0</span>
                 </div>
             </div>
 
@@ -400,12 +496,12 @@
         </div>
     </div>
 
-    <!-- JAMANVAR PAGE -->
+    <!-- JAMANVAR PAGE WITH DYNAMIC SUB MENU CATEGORY FILTER -->
     <div id="page-jamanvar" class="page-content d-none">
         <div class="card card-premium">
             <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
                 <h4 class="fw-bold mb-0" style="color: var(--royal-maroon);"><i class="fa-solid fa-utensils"></i> લગ્ન પ્રસંગ જમણવાર મેનુ લિસ્ટ</h4>
-                <button class="btn btn-dark fw-bold px-4 shadow-sm" onclick="printJamanvarMenu()"><i class="fa-solid fa-print"></i> મેનુ લિસ્ટ પ્રિન્ટ</button>
+                <button class="btn btn-dark fw-bold px-4 shadow-sm" onclick="printJamanvarDirect()"><i class="fa-solid fa-print"></i> આ મેનુ લિસ્ટ પ્રિન્ટ</button>
             </div>
             <div class="row">
                 <div class="col-md-4 mb-4">
@@ -432,9 +528,27 @@
                         </form>
                     </div>
                 </div>
+                
                 <div class="col-md-8">
                     <div class="card p-3 rounded-4 border-0 shadow-sm bg-white">
-                        <h5 class="fw-bold text-success mb-3"><i class="fa-solid fa-list-ul"></i> ફાઇનલ ભોજન મેનુ લિસ્ટ</h5>
+                        <!-- Dynamic Sub Menu Category Filter Dropdown -->
+                        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                            <h5 class="fw-bold text-success mb-0"><i class="fa-solid fa-list-ul"></i> ભોજન વાનગી લિસ્ટ</h5>
+                            <div class="d-flex align-items-center gap-2">
+                                <label class="fw-bold text-secondary mb-0 text-nowrap" style="font-size:0.9rem;">કેટેગરી સબ-મેનુ જુઓ:</label>
+                                <select id="jam_filter_category" class="form-select form-select-sm" style="width: 200px;" onchange="renderJamanvarTable()">
+                                    <option value="ALL">-- બધી જ વાનગીઓ --</option>
+                                    <option value="મીઠાઈ (Sweets)">મીઠાઈ (Sweets)</option>
+                                    <option value="ફરસાણ (Starters)">ફરસાણ (Starters)</option>
+                                    <option value="મુખ્ય શાક (Sabji)">મુખ્ય શાક (Sabji)</option>
+                                    <option value="દાળ-રાઈસ (Rice & Dal)">દાળ-રાઈસ (Rice & Dal)</option>
+                                    <option value="રોટલી-પૂરી (Bread)">રોટલી-પૂરી (Bread)</option>
+                                    <option value="સલાડ-રાયતું (Sides)">સલાડ-રાયતું (Sides)</option>
+                                    <option value="દ્રવ્યો / આઈસ્ક્રીમ (Desserts)">દ્રવ્યો / આઈસ્ક્રીમ (Desserts)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
                         <div class="custom-guest-table-wrapper">
                             <table class="table custom-guest-table align-middle">
                                 <thead class="table-dark">
@@ -464,19 +578,19 @@
             <h5 class="fw-bold mb-3" style="color: var(--royal-maroon);"><i class="fa-solid fa-paper-plane"></i> લિસ્ટમાંથી સીધો વોટ્સએપ મેસેજ મોકલો</h5>
             <div class="custom-guest-table-wrapper">
                 <table class="table custom-guest-table align-middle">
-                    <thead class="table-dark"><tr><th width="70">ક્રમ</th><th>મહેમાનનું નામ</th><th>મોબાઈલ નંબર</th><th width="150">સ્ટેટસ</th><th width="120">એક્શન</th></tr></thead>
+                    <thead class="table-dark"><tr><th width="70">Ref. No.</th><th>મહેમાનનું નામ અને સરનામું</th><th>મોબાઈલ નંબર</th><th width="150">સ્ટેટસ</th><th width="120">એક્શન</th></tr></thead>
                     <tbody id="waSendingListBody"></tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <!-- PRINT VIEW PAGE -->
+    <!-- PRINT VIEW PAGE (Sticker Configuration Sheet Screen) -->
     <div id="page-print" class="page-content d-none">
         <div class="card card-premium no-print mb-4">
             <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
                 <div>
-                    <h4 class="fw-bold mb-2" style="color: var(--royal-maroon);"><i class="fa-solid fa-print"></i> સ્ટીкер પ્રિન્ટ આઉટ કંટ્રોલ પેનલ</h4>
+                    <h4 class="fw-bold mb-2" style="color: var(--royal-maroon);"><i class="fa-solid fa-print"></i> સ્ટીકર શીટ લેઆઉટ પેનલ</h4>
                     <div class="d-flex align-items-center gap-2 flex-wrap">
                         <label class="fw-bold text-secondary mb-0">એક પેજ પર પ્રિન્ટ સાઈઝ સેટિંગ્સ:</label>
                         <select id="stickerCountSelector" class="form-select shadow-sm" style="width:260px;" onchange="changeStickerCount(this.value)">
@@ -485,7 +599,7 @@
                         </select>
                     </div>
                 </div>
-                <button class="btn btn-maroon btn-lg fw-bold px-5 py-3 shadow" onclick="window.print()"><i class="fa-solid fa-print"></i> પ્રિન્ટ કમાન્ડ (Print Now)</button>
+                <button class="btn btn-maroon btn-lg fw-bold px-5 py-3 shadow" onclick="printStickers()"><i class="fa-solid fa-print"></i> આ સ્ટીકર પ્રિન્ટ કરો</button>
             </div>
         </div>
         <div id="printArea" class="mt-2"></div>
@@ -494,15 +608,24 @@
 </div>
 
 <!-- MODALS -->
+<!-- Home Stats Breakdown Popup Modal List View -->
 <div class="modal fade" id="homeListModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content rounded-4 border-0 overflow-hidden shadow">
-            <div class="modal-header bg-dark text-white p-3"><h5 class="modal-title fw-bold" id="homeModalTitle">મહેમાન વિગતો</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+            <div class="modal-header bg-dark text-white p-3">
+                <h5 class="modal-title fw-bold" id="homeModalTitle">મહેમાન વિગતો</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
             <div class="modal-body p-3">
+                <div id="homeModalActionHeader" class="mb-3">
+                    <button class="btn btn-sm btn-print-menu" onclick="printModalFilteredListDirect()"><i class="fa-solid fa-print"></i> આ લિસ્ટ પ્રિન્ટ કરો</button>
+                </div>
                 <div class="custom-guest-table-wrapper">
                     <div class="table-responsive" style="max-height: 400px;">
                         <table class="table custom-guest-table align-middle">
-                            <thead class="table-dark"><tr><th width="70">ક્રમ</th><th>મહેમાનનું નામ</th><th>કંપની</th><th>શહેર</th><th>મોબાઈલ</th></tr></thead>
+                            <thead class="table-dark" id="homeModalTableHeader">
+                                <tr><th width="70">ક્રમ</th><th>મહેમાનનું નામ</th><th>કંપની / સરનામું</th><th>શહેર</th><th>મોબાઈલ</th></tr>
+                            </thead>
                             <tbody id="homeModalTableBody"></tbody>
                         </table>
                     </div>
@@ -581,7 +704,7 @@
                     <div class="col-md-4"><label class="form-label fw-bold">મંગલ લગ્ન તારીખ</label><input type="date" id="wa_wedding_date" class="form-control" onchange="generateWAMessage()"></div>
                 </div>
                 <div class="mt-4 p-3 rounded-3 border" style="background-color: var(--royal-gold-light); border: 1px dashed var(--royal-maroon) !important;">
-                    <div class="d-flex justify-content-between align-items-center mb-3"><label class="form-label fw-bold mb-0" style="color: var(--royal-maroon);"><i class="fa-solid fa-hands-praying"></i> 🙏 આવકારકોની યાદી:</label><button class="btn btn-sm btn-success fw-bold px-3" type="button" onclick="addInviterRow()"><i class="fa-solid fa-plus"></i> નવું નામ ઉમેરો</button></div>
+                    <div class="d-flex justify-content-between align-items-center mb-3"><label class="form-label fw-bold mb-0" style="color: var(--royal-maroon);"><i class="fa-solid fa-hands-praying"></i> 🙏  આવકારકોની યાદી:</label><button class="btn btn-sm btn-success fw-bold px-3" type="button" onclick="addInviterRow()"><i class="fa-solid fa-plus"></i> નવું નામ ઉમેરો</button></div>
                     <div id="inviter-rows-container">
                         <div class="row g-2 mb-2 p-2 bg-white rounded border border-secondary inviter-block">
                             <div class="col-md-6"><input type="text" class="form-control form-control-sm wa-inviter-name" placeholder="આવકારકનું નામ" onkeyup="generateWAMessage()"></div>
@@ -606,15 +729,17 @@
     let jamanvarMenu = JSON.parse(localStorage.getItem('kankotri_jamanvar')) || [];
     
     let rawExcelData = []; let excelHeaders = []; let mappedGuestsTemp = [];
-    let currentPrintType = 'stickers'; 
     let selectedStickerCount = 10; 
+    let globalModalFilterType = '';
 
     document.addEventListener("DOMContentLoaded", function() {
         updateCounts();
         renderAll();
         generateWAMessage();
+        setupSelectionTracker();
     });
 
+    /* સુધારો: નોટિફિકેશન ટાઈમર વધારીને 3000ms (3 સેકન્ડ) કર્યો */
     function showToast(message, type = 'green') {
         const toast = document.getElementById('toastNotification');
         const icon = document.getElementById('toastIcon');
@@ -630,10 +755,11 @@
         
         document.getElementById('toastMessage').innerText = message;
         toast.style.display = 'block';
-        setTimeout(() => { toast.style.display = 'none'; }, 3000);
+        setTimeout(() => { toast.style.display = 'none'; }, 3000); 
     }
 
     function showPage(pageId) {
+        document.body.classList.remove('sticker-printing-mode'); 
         document.querySelectorAll('.page-content').forEach(p => p.classList.add('d-none'));
         const targetPage = document.getElementById(`page-${pageId}`);
         if(targetPage) targetPage.classList.remove('d-none');
@@ -653,15 +779,35 @@
         const total = guests.length;
         const verified = verifiedIds.filter(id => guests.some(g => g.id === id)).length;
         const pending = total - verified;
+        const waSentCount = guests.filter(g => waSentStatus[g.id] === true).length;
+        const waPendingCount = total - waSentCount;
 
         document.getElementById('home-total-count').innerText = total;
         document.getElementById('home-verified-count').innerText = verified;
         document.getElementById('home-pending-count').innerText = pending;
+        document.getElementById('home-wasent-count').innerText = waSentCount;
+        document.getElementById('home-wapending-count').innerText = waPendingCount;
+
         document.getElementById('count-pending').innerText = pending;
         document.getElementById('count-verified').innerText = verified;
         
         const badge = document.getElementById('filterCountBadge');
         if(badge) badge.innerText = `કુલ મહેમાન: ${total}`;
+        updateSelectedBadgeCount();
+    }
+
+    function setupSelectionTracker() {
+        document.addEventListener('change', function(e) {
+            if (e.target && e.target.classList.contains('guest-chk') || e.target && e.target.id === 'selectAll') {
+                updateSelectedBadgeCount();
+            }
+        });
+    }
+
+    function updateSelectedBadgeCount() {
+        const checkedCount = document.querySelectorAll('.guest-chk:checked').length;
+        const selBadge = document.getElementById('selectedCountBadge');
+        if(selBadge) { selBadge.innerText = `પસંદ કરેલ મહેમાન: ${checkedCount}`; }
     }
 
     function saveToLocalStorage() {
@@ -696,9 +842,7 @@
         renderVerifyTables();
         renderWAPage();
         renderJamanvarTable();
-        if(currentPrintType === 'stickers') { renderPrintPage(); } 
-        else if(currentPrintType === 'fullList') { renderFullListPrint(); }
-        else { renderJamanvarPrintView(); }
+        renderStickerPreviewPage();
     }
 
     function renderLast5() {
@@ -730,6 +874,7 @@
             </tr>`;
         });
         document.getElementById('allGuestsTableBody').innerHTML = html || '<tr><td colspan="7" class="text-center text-muted py-3">લિસ્ટ ખાલી છે.</td></tr>';
+        updateSelectedBadgeCount();
     }
 
     function liveUpdate(id, field, element) {
@@ -758,6 +903,7 @@
 
     function toggleSelectAll(master) {
         document.querySelectorAll('.guest-chk').forEach(c => c.checked = master.checked);
+        updateSelectedBadgeCount();
     }
 
     function deleteSelected() {
@@ -767,6 +913,7 @@
             const idsToDelete = Array.from(checkedBoxes).map(cb => cb.value);
             guests = guests.filter(g => !idsToDelete.includes(g.id));
             verifiedIds = verifiedIds.filter(id => !idsToDelete.includes(id));
+            idsToDelete.forEach(id => delete waSentStatus[id]);
             saveToLocalStorage();
             showToast('પસંદ કરેલ એન્ટ્રીઓ સફળતાપૂર્વક ડીલીટ કરાઈ! 🔴', 'red');
             renderAll();
@@ -789,16 +936,22 @@
     }
 
     function renderJamanvarTable() {
+        const filterVal = document.getElementById('jam_filter_category').value;
         let html = '';
-        jamanvarMenu.forEach((item, index) => {
-            html += `<tr>
-                <td><b>${index + 1}</b></td>
-                <td><span class="badge bg-secondary fs-6 text-white">${item.category}</span></td>
-                <td><b class="fs-5 text-dark">${item.name}</b></td>
-                <td class="text-center"><button class="btn btn-sm btn-danger" onclick="deleteJamanvarItem('${item.id}')"><i class="fa-solid fa-trash"></i></button></td>
-            </tr>`;
+        let count = 1;
+        
+        jamanvarMenu.forEach((item) => {
+            if(filterVal === 'ALL' || item.category === filterVal) {
+                html += `<tr>
+                    <td><b>${count}</b></td>
+                    <td><span class="badge bg-secondary fs-6 text-white">${item.category}</span></td>
+                    <td><b class="fs-5 text-dark">${item.name}</b></td>
+                    <td class="text-center"><button class="btn btn-sm btn-danger" onclick="deleteJamanvarItem('${item.id}')"><i class="fa-solid fa-trash"></i></button></td>
+                </tr>`;
+                count++;
+            }
         });
-        document.getElementById('jamanvarTableBody').innerHTML = html || '<tr><td colspan="4" class="text-center text-muted p-3">કોઈ આઈટમ નથી.</td></tr>';
+        document.getElementById('jamanvarTableBody').innerHTML = html || '<tr><td colspan="4" class="text-center text-muted p-3">આ સબ-મેનુ કેટેગરીમાં કોઈ વાનગી નથી.</td></tr>';
     }
 
     function deleteJamanvarItem(id) {
@@ -808,76 +961,7 @@
         renderJamanvarTable();
     }
 
-    function printJamanvarMenu() {
-        currentPrintType = 'jamanvar';
-        renderJamanvarPrintView();
-        showPage('print');
-        setTimeout(() => { window.print(); }, 300);
-    }
-
-    function renderJamanvarPrintView() {
-        let html = `<div class="print-page p-4">
-            <h2 class="text-center fw-bold mb-1" style="color:#630915;">🍽️ લગ્ન મહોત્સવ જમણવાર ભોજન મેનુ 📋</h2>
-            <p class="text-center text-muted border-bottom pb-3">વ્યવસ્થાપન નકલ</p>
-            <table class="print-table">
-                <thead>
-                    <tr>
-                        <th width="80" class="text-center"><b>ક્રમ</b></th>
-                        <th width="240"><b>વાનગી પ્રકાર</b></th>
-                        <th><b>વાનગી / આઈટમનું નામ</b></th>
-                    </tr>
-                </thead>
-                <tbody>`;
-        jamanvarMenu.forEach((item, i) => {
-            html += `<tr>
-                <td class="text-center" style="font-weight:bold;">${i + 1}</td>
-                <td><span style="font-weight:bold; color:#630915;">${item.category}</span></td>
-                <td><b style="font-size:1.15rem;">${item.name}</b></td>
-            </tr>`;
-        });
-        html += `</tbody></table></div>`;
-        document.getElementById('printArea').innerHTML = html || '<p class="text-center p-5">જમણવાર મેનુ લિસ્ટ ખાલી છે.</p>';
-    }
-
-    function changeStickerCount(countValue) {
-        selectedStickerCount = parseInt(countValue);
-        renderPrintPage();
-    }
-
-    function printFullList() {
-        currentPrintType = 'fullList';
-        renderFullListPrint();
-        showPage('print');
-        setTimeout(() => { window.print(); }, 300);
-    }
-
-    function renderPrintPage() {
-        currentPrintType = 'stickers';
-        let html = ''; let count = 0;
-        const gridClass = (selectedStickerCount === 10) ? 'grid-10' : 'grid-12';
-        const heightClass = (selectedStickerCount === 10) ? 'height-10' : 'height-12';
-
-        guests.forEach((g, i) => {
-            if(count % selectedStickerCount === 0) { 
-                if(count > 0) html += `</div></div>`; 
-                html += `<div class="print-page"><div class="${gridClass}">`; 
-            }
-            
-            html += `<div class="print-sticker-box ${heightClass}">
-                <div class="fw-bold fs-5 text-truncate" style="color:#630915 !important;">${g.name}</div>
-                <div class="text-truncate">${g.company ? '<b>' + g.company + '</b>' : '&nbsp;'}</div>
-                <div class="text-truncate">${g.address || '&nbsp;'}</div>
-                <div class="text-truncate">${g.city ? '<b>શહેર: </b>' + g.city : '&nbsp;'}</div>
-                <div class="text-truncate">${g.mobile ? '<b>મોબાઈલ: </b>' + g.mobile : '&nbsp;'}</div>
-                <div class="position-absolute bottom-0 end-0 m-2"><span class="badge border text-danger py-1 px-2" style="font-size:0.75rem; border-color:#630915 !important; color:#630915 !important;">નંબર: ${i + 1}</span></div>
-            </div>`;
-            count++;
-        });
-        if(count > 0) html += `</div></div>`;
-        document.getElementById('printArea').innerHTML = html || '<p class="text-center py-5 text-muted">પ્રિન્ટ સ્ટીકર માટે કોઈ ડેટા ઉપલબ્ધ નથી.</p>';
-    }
-
-    function renderFullListPrint() {
+    function printFullListDirect() {
         let html = `<div class="print-page p-4">
             <h2 class="text-center fw-bold mb-4" style="color:#630915;">📋 સમગ્ર મહેમાન આમંત્રણ યાદી લિસ્ટ</h2>
             <table class="print-table">
@@ -903,17 +987,189 @@
             </tr>`;
         });
         html += `</tbody></table></div>`;
-        document.getElementById('printArea').innerHTML = html;
+        triggerDirectPrint(html);
+    }
+
+    /* સુધારો: જમણવાર લિસ્ટનું Category Wise ગ્રુપિંગ, સિરીયલ નંબર અને છેલ્લે ટોટલ આઈટમ કાઉન્ટ સાથે પ્રિન્ટિંગ */
+    function printJamanvarDirect() {
+        if(jamanvarMenu.length === 0) {
+            alert('જમણવાર લિસ્ટ ખાલી છે!');
+            return;
+        }
+
+        // બધી સંભવિત કેટેગરીનું લિસ્ટ ફિક્સ ક્રમમાં
+        const categories = [
+            "મીઠાઈ (Sweets)",
+            "ફરસાણ (Starters)",
+            "મુખ્ય શાક (Sabji)",
+            "દાળ-રાઈસ (Rice & Dal)",
+            "રોટલી-પૂરી (Bread)",
+            "સલાડ-રાયતું (Sides)",
+            "દ્રવ્યો / આઈસ્ક્રીમ (Desserts)"
+        ];
+
+        let html = `<div class="print-page p-4">
+            <h2 class="text-center fw-bold mb-1" style="color:#630915;">🍽️ લગ્ન મહોત્સવ જમણવાર ભોજન મેનુ 📋</h2>
+            <p class="text-center text-muted border-bottom pb-3">વ્યવસ્થાપન નકલ (કેટેગરી વાઈઝ શોર્ટિંગ)</p>
+            <table class="print-table">
+                <thead>
+                    <tr>
+                        <th width="100" class="text-center"><b>અનુક્રમ નંબર</b></th>
+                        <th><b>વાનગી / આઈટમનું નામ</b></th>
+                    </tr>
+                </thead>
+                <tbody>`;
+
+        let totalItems = 0;
+
+        categories.forEach(cat => {
+            // આ કેટેગરીમાં આવતી વાનગીઓ ફિલ્ટર કરો
+            const filteredItems = jamanvarMenu.filter(item => item.category === cat);
+            
+            if(filteredItems.length > 0) {
+                // કેટેગરી હેડર રો (Row)
+                html += `<tr>
+                    <td colspan="2" class="print-category-header" style="padding: 8px 12px;">🔽 ${cat}</td>
+                </tr>`;
+                
+                // કેટેગરીની અંદર આઈટમ્સ તેનું અલગ સિરીયલ નંબર સાથે
+                filteredItems.forEach((item, index) => {
+                    totalItems++;
+                    html += `<tr>
+                        <td class="text-center" style="font-weight:bold;">${index + 1}</td>
+                        <td><b style="font-size:1.15rem;">${item.name}</b></td>
+                    </tr>`;
+                });
+            }
+        });
+
+        // છેલ્લે કુલ આઈટમ દર્શાવવા માટેનું ફૂટર
+        html += `<tr class="print-total-footer">
+            <td class="text-end" style="padding: 12px;"><b>કુલ આઈટમ:</b></td>
+            <td><b>${totalItems} વાનગીઓ</b></td>
+        </tr>`;
+
+        html += `</tbody></table></div>`;
+        triggerDirectPrint(html);
+    }
+
+    function printModalFilteredListDirect() {
+        let filteredList = [];
+        let titleText = "";
+        
+        if (globalModalFilterType === 'total') { filteredList = guests; titleText = "કુલ મહેમાન એન્ટ્રી લિસ્ટ"; } 
+        else if (globalModalFilterType === 'verified') { filteredList = guests.filter(g => verifiedIds.includes(g.id)); titleText = "વેરિફાય થયેલ મહેમાન લિસ્ટ"; } 
+        else if (globalModalFilterType === 'pending') { filteredList = guests.filter(g => !verifiedIds.includes(g.id)); titleText = "બાકી રહેલ કંકોતરી લિસ્ટ"; }
+        else if (globalModalFilterType === 'wa_sent') { filteredList = guests.filter(g => waSentStatus[g.id] === true); titleText = "વોટ્સએપ મોકલેલ મહેમાન લિસ્ટ"; }
+        else if (globalModalFilterType === 'wa_pending') { filteredList = guests.filter(g => waSentStatus[g.id] !== true); titleText = "વોટ્સએપ મોકલવાના બાકી લિસ્ટ"; }
+
+        let html = `<div class="print-page p-4">
+            <h2 class="text-center fw-bold mb-4" style="color:#630915;">📋 ${titleText}</h2>
+            <table class="print-table">
+                <thead>
+                    <tr>
+                        <th width="70" class="text-center"><b>ક્રમ</b></th>
+                        <th><b>મહેમાનનું નામ</b></th>
+                        <th><b>કંપની / સરનામું</b></th>
+                        <th><b>શહેર</b></th>
+                        <th><b>મોબાઈલ નંબર</b></th>
+                    </tr>
+                </thead>
+                <tbody>`;
+        filteredList.forEach((g, i) => {
+            html += `<tr>
+                <td class="text-center">${i + 1}</td>
+                <td><b>${g.name}</b></td>
+                <td>${g.company || ''} ${g.address || ''}</td>
+                <td>${g.city || '-'}</td>
+                <td>${g.mobile || '-'}</td>
+            </tr>`;
+        });
+        html += `</tbody></table></div>`;
+        
+        bootstrap.Modal.getInstance(document.getElementById('homeListModal')).hide();
+        triggerDirectPrint(html);
+    }
+
+    function triggerDirectPrint(htmlContent) {
+        const printSec = document.getElementById('hiddenPrintSection');
+        printSec.innerHTML = htmlContent;
+        setTimeout(() => {
+            window.print();
+            printSec.innerHTML = ""; 
+        }, 300);
+    }
+
+    function changeStickerCount(countValue) {
+        selectedStickerCount = parseInt(countValue);
+        renderStickerPreviewPage();
+    }
+
+    function renderStickerPreviewPage() {
+        let html = ''; let count = 0;
+        const gridClass = (selectedStickerCount === 10) ? 'grid-10' : 'grid-12';
+        const heightClass = (selectedStickerCount === 10) ? 'height-10' : 'height-12';
+
+        guests.forEach((g, i) => {
+            if(count % selectedStickerCount === 0) { 
+                if(count > 0) html += `</div></div>`; 
+                html += `<div class="print-page"><div class="${gridClass}">`; 
+            }
+            
+            html += `<div class="print-sticker-box ${heightClass}">
+                <div class="fw-bold fs-5 text-truncate" style="color:#630915 !important;">${g.name}</div>
+                <div class="text-truncate">${g.company ? '<b>' + g.company + '</b>' : '&nbsp;'}</div>
+                <div class="text-truncate">${g.address || '&nbsp;'}</div>
+                <div class="text-truncate">${g.city ? '<b>શહેર: </b>' + g.city : '&nbsp;'}</div>
+                <div class="text-truncate">${g.mobile ? '<b>મોબાઈલ: </b>' + g.mobile : '&nbsp;'}</div>
+                <div class="position-absolute bottom-0 end-0 m-2"><span class="badge border text-danger py-1 px-2" style="font-size:0.75rem; border-color:#630915 !important; color:#630915 !important;">નંબર: ${i + 1}</span></div>
+            </div>`;
+            count++;
+        });
+        if(count > 0) html += `</div></div>`;
+        document.getElementById('printArea').innerHTML = html || '<p class="text-center py-5 text-muted">પ્રિન્ટ સ્ટીકર માટે કોઈ ડેટા ઉપલબ્ધ નથી.</p>';
+    }
+
+    function printStickers() {
+        document.body.classList.add('sticker-printing-mode');
+        setTimeout(() => {
+            window.print();
+            document.body.classList.remove('sticker-printing-mode');
+        }, 200);
     }
 
     function openHomeListModal(type) {
+        globalModalFilterType = type;
         let filteredList = []; let title = "";
+        let isWAType = (type === 'wa_sent' || type === 'wa_pending');
+        
         if (type === 'total') { filteredList = guests; title = "📋 કુલ મહેમાન એન્ટ્રી લિસ્ટ"; } 
         else if (type === 'verified') { filteredList = guests.filter(g => verifiedIds.includes(g.id)); title = "✅ વેરિફાય થયેલ મહેમાન લિસ્ટ"; } 
         else if (type === 'pending') { filteredList = guests.filter(g => !verifiedIds.includes(g.id)); title = "⏳ બાકી રહેલ કંકોતરી લિસ્ટ"; }
+        else if (type === 'wa_sent') { filteredList = guests.filter(g => waSentStatus[g.id] === true); title = "🟢 વોટ્સએપ મોકલેલ મહેમાન લિસ્ટ"; }
+        else if (type === 'wa_pending') { filteredList = guests.filter(g => waSentStatus[g.id] !== true); title = "🟡 વોટ્સએપ મોકલવાના બાકી લિસ્ટ"; }
+
         document.getElementById('homeModalTitle').innerText = title + ` (${filteredList.length})`;
+        
+        const headerArea = document.getElementById('homeModalTableHeader');
+        if(isWAType) {
+            headerArea.innerHTML = `<tr><th width="70">ક્રમ</th><th>મહેમાનનું નામ અને સરનામું</th><th>મોબાઈલ</th><th width="120">એક્શન</th></tr>`;
+        } else {
+            headerArea.innerHTML = `<tr><th width="70">ક્રમ</th><th>મહેમાનનું નામ</th><th>કંપની</th><th>શહેર</th><th>મોબાઈલ</th></tr>`;
+        }
+
         let html = "";
-        filteredList.forEach((g, i) => { html += `<tr><td><b>${i + 1}</b></td><td><strong>${g.name}</strong></td><td>${g.company || '-'}</td><td>${g.city || '-'}</td><td>${g.mobile || '-'}</td></tr>`; });
+        filteredList.forEach((g, i) => { 
+            const displayIndex = i + 1;
+            if(isWAType) {
+                const subDetails = `<small class="text-muted d-block" style="font-size:0.8rem;">${g.address || ''} ${g.city ? ' | શહેર: '+g.city : ''}</small>`;
+                const btnAction = `<button class="btn btn-xs btn-success py-1 px-2" onclick="sendWAMessage('${g.id}'); setTimeout(function(){ openHomeListModal('${globalModalFilterType}'); }, 500);"><i class="fa-brands fa-whatsapp"></i> મોકલો</button>`;
+                html += `<tr><td><b>${displayIndex}</b></td><td><strong>${g.name}</strong>${subDetails}</td><td>${g.mobile || '-'}</td><td>${btnAction}</td></tr>`;
+            } else {
+                html += `<tr><td><b>${displayIndex}</b></td><td><strong>${g.name}</strong></td><td>${g.company || '-'}</td><td>${g.city || '-'}</td><td>${g.mobile || '-'}</td></tr>`; 
+            }
+        });
+        
         document.getElementById('homeModalTableBody').innerHTML = html || '<tr><td colspan="5" class="text-center p-3">લિસ્ટ ખાલી છે!</td></tr>';
         new bootstrap.Modal(document.getElementById('homeListModal')).show();
     }
@@ -936,13 +1192,26 @@
             const s = parseInt(document.getElementById('verifyInput').value);
             if(s > 0 && s <= guests.length) {
                 const tg = guests[s - 1];
-                if(!verifiedIds.includes(tg.id)) { verifiedIds.push(tg.id); saveToLocalStorage(); renderVerifyTables(); showToast('કંકોતરી સફળતાપૂર્વક વેરિફાય થઈ ગઈ! 🟢', 'green'); } 
+                if(!verifiedIds.includes(tg.id)) { 
+                    verifiedIds.push(tg.id); 
+                    saveToLocalStorage(); 
+                    renderVerifyTables(); 
+                    showToast(`કંકોતરી સફળતાપૂર્વક વેરિફાય થઈ ગઈ: ${tg.name} 🟢`, 'green'); 
+                } 
                 else alert('આ ક્રમ નંબર પહેલાથી જ વેરિફાય છે!');
             } else alert('ખોટો ક્રમ નંબર લખ્યો છે!');
             document.getElementById('verifyInput').value = '';
         }
     }
-    function removeVerification(id) { verifiedIds = verifiedIds.filter(vId => vId !== id); saveToLocalStorage(); renderVerifyTables(); showToast('વેરિફિકેશન રદ (ડીલીટ) કરવામાં આવ્યું! 🔴', 'red'); }
+    
+    function removeVerification(id) { 
+        const tg = guests.find(g => g.id === id);
+        const nameStr = tg ? tg.name : '';
+        verifiedIds = verifiedIds.filter(vId => vId !== id); 
+        saveToLocalStorage(); 
+        renderVerifyTables(); 
+        showToast(`વેરિફિકેશન રદ (ડીલીટ) કરવામાં આવ્યું: ${nameStr} 🔴`, 'red'); 
+    }
 
     function openDuplicateModal() {
         let duplicates = []; let seenNames = {};
@@ -957,8 +1226,10 @@
         const checkedBoxes = document.querySelectorAll('.dup-chk:checked'); if(checkedBoxes.length === 0) return alert('નામ સિલેક્ટ કરો!');
         if(confirm(`શું પસંદ કરેલા ડુપ્લીકેટ નામો ડીલીટ કરવા છે?`)) {
             const idsToDelete = Array.from(checkedBoxes).map(cb => cb.value);
-            guests = guests.filter(g => !idsToDelete.includes(g.id)); saveToLocalStorage();
-            bootstrap.Modal.getInstance(document.getElementById('duplicateModal')).hide(); showToast('ડuપ્લીકેટ એન્ટ્રીઓ ડીલીટ કરવામાં આવી! 🔴', 'red'); renderAll();
+            guests = guests.filter(g => !idsToDelete.includes(g.id)); 
+            idsToDelete.forEach(id => delete waSentStatus[id]);
+            saveToLocalStorage();
+            bootstrap.Modal.getInstance(document.getElementById('duplicateModal')).hide(); showToast('ડુપ્લીકેટ એન્ટ્રીઓ ડીલીટ કરવામાં આવી! 🔴', 'red'); renderAll();
         }
     }
 
@@ -1027,9 +1298,18 @@
     function renderWAPage() {
         let html = ''; guests.forEach((g, i) => {
             const isSent = waSentStatus[g.id]; const badge = isSent ? `<span class="badge bg-success text-white">Sent</span>` : `<span class="badge bg-warning text-dark">Pending</span>`;
-            html += `<tr><td><b>${i+1}</b></td><td><strong class="text-dark">${g.name}</strong></td><td>${g.mobile || '-'}</td><td>${badge}</td><td><button class="btn btn-sm btn-success" onclick="sendWAMessage('${g.id}')" ${g.mobile ? '' : 'disabled'}><i class="fa-brands fa-whatsapp"></i> મોકલો</button></td></tr>`;
+            const subTextInfo = `<small class="text-muted d-block mt-0.5" style="font-size: 0.82rem;font-weight: normal;line-height:1.2;"><i class="fa-solid fa-location-dot me-1" style="font-size:0.75rem;"></i> ${g.address || '-'} ${g.city ? ' | શહેર/ગામ: ' + g.city : ''}</small>`;
+            
+            html += `<tr>
+                <td><b>${i+1}</b></td>
+                <td><strong class="text-dark">${g.name}</strong>${subTextInfo}</td>
+                <td>${g.mobile || '-'}</td>
+                <td>${badge}</td>
+                <td><button class="btn btn-sm btn-success" onclick="sendWAMessage('${g.id}')" ${g.mobile ? '' : 'disabled'}><i class="fa-brands fa-whatsapp"></i> મોકલો</button></td>
+            </tr>`;
         }); document.getElementById('waSendingListBody').innerHTML = html || '<tr><td colspan="5" class="text-center">કોઈ લિસ્ટ નથી.</td></tr>';
     }
+    
     function sendWAMessage(id) {
         const guest = guests.find(g => g.id === id); if(!guest || !guest.mobile) return;
         let baseMsg = document.getElementById('wa_message_box').value; let personalMsg = baseMsg.replace('#GUEST_NAME#', guest.name);
